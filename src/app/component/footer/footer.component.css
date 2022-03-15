@@ -1,0 +1,23 @@
+.menu{
+    width: 100%;
+    height: 65px;
+    background-color: var(--secondaryColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.menu__enlaces{
+    margin-left: 15px;
+    margin-right: 15px;
+    color:var(--primaryColor)
+}
+
+.texto{
+    font-size: 10px;
+}

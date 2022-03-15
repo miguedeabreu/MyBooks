@@ -1,0 +1,21 @@
+.presentacion{
+    width: 100%;
+}
+
+.carousel-inner{
+   max-width: 100%;
+   position: fixed; 
+   bottom: 0;
+   z-index: -1;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 180px;
+    color: #fafafa;
+    background-color: rgba(128, 128, 128, 0.438);
+    margin-left: 200px;
+    margin-right: 200px;
+}
