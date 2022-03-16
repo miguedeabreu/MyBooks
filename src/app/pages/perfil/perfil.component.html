@@ -1,0 +1,32 @@
+<section class="perfil">
+    
+    <section class="caja1">
+        <form action="formulario-contacto.php">
+            <figure class="imagen">
+                <img class="foto" src="https://cdn.domestika.org/c_fill,dpr_1.0,f_auto,h_1200,pg_1,t_base_params,w_1200/v1559596385/project-covers/000/511/657/511657-original.jpg?1559596385" alt="">
+            </figure>
+            <h2 class="titulo">{{miUsuario.nombre}} {{miUsuario.apellido}}</h2>
+            <h5 class="texto">Nombre: {{miUsuario.nombre}}</h5>
+            <h5 class="texto">Apellido: {{miUsuario.apellido}}</h5>
+            <h5 class="texto">e-mail: {{miUsuario.correo}}</h5>
+        </form>
+    </section>
+
+    <section class="caja2">
+        <form action="formulario-contacto.php">
+            <h2 class="titulo">Editar Perfil</h2>
+            <input type="text" #input1 placeholder="Nombre"/>
+            <input type="text" #input2 placeholder="Apellido"/>
+            <input type="email" #input3 placeholder="e-mail"/>
+            <input type="text" #input4 placeholder="URL"/>
+            <button 
+                type="button" 
+                class="btn"
+                on-click=enviar(input1,input2,input3,input4)>
+                MODIFICAR
+
+            </button>
+        </form>
+    </section>
+
+</section>
