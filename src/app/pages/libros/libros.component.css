@@ -1,0 +1,165 @@
+.biblioteca{
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+}
+
+.libros{
+    display: flex;
+    flex-direction: row;
+    padding-left: 8vw;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #004b740e;
+    border-radius: 5%;
+    flex-wrap: wrap;
+    width: 250px;
+    border: none;
+}
+
+.imagen{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    max-height: 200px;
+    max-width: 200px;
+    overflow: hidden;
+    transition: transform 2s linear;
+}
+
+.imagen:hover{
+    transform: scale(1.1);
+}
+
+.foto{
+    width: auto;
+    height: 100%;
+    max-height: 160px;   
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card__titulo{
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    color: var(--primaryColor);
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--primaryColor);
+}
+
+.precio{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: var(--primaryColor);
+    font-weight: bold;
+}
+
+.button{
+	display: block;
+	background-color: #0095eb;
+	padding: 10px 30px 10px 30px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5%;
+    margin-bottom: 20px;
+}
+
+.button:hover{
+	background-color: #046193;
+}
+
+.newBtn{
+	display: block;
+	background-color: var(--secondaryColor);
+	padding: 10px 30px 10px 30px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+    font-family: "Roboto", sans-serif;
+    border-radius: 5%;
+    margin-bottom: 20px;
+}
+
+.newBtn:hover{
+	background-color: #046193;
+}
+
+/* ///////////// */
+
+.condicion{
+    font-size: 20px;
+    color:var(--primaryColor);
+    text-align: center;
+    margin-left: 25vw;
+}
+
+/* FORMULARIOS */
+
+.formulario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 420px;
+    padding: 20px;
+    background-color: var(--secondaryColor);
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5%;
+    border:none;
+    color:var(--primaryColor);
+    box-sizing: border-box;
+}
+
+.input{
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box; 
+    border: none; 
+    color: #525c66; 
+    font-size: 1em;
+    resize: none; 
+}
+
+.formulario_titulo{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}

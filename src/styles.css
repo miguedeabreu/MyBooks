@@ -10,3 +10,12 @@
     --secondaryColor: #9FADBD;
     font-family: 'Catamaran', sans-serif;
 }
+
+.clean{
+    padding-top: 18vh;
+    padding-bottom: 5vh;
+}
+
+.vacio{
+    margin-top: 80px;
+}

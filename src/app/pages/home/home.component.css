@@ -1,5 +1,6 @@
 .presentacion{
     width: 100%;
+    min-height: 77vh;
 }
 
 .carousel-inner{

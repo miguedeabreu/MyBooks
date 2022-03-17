@@ -1,0 +1,71 @@
+<section class="clean biblioteca">
+
+    <section class="libros">
+        <div *ngIf="libros.length === 0" class="condicion">
+            No tenemos libros publicados en estos momentos. <br>
+            Puede añadir uno mediante nuestro formulario.
+        </div>
+        <section class="card" *ngFor="let libro of libros; let par = even; let impar = odd;">
+            <figure class="imagen">
+                <img class="foto" src="{{libro.photo}}">
+            </figure>
+            <div class="info">
+                <h6 class="card__titulo">{{libro.titulo}}</h6>
+                <section class="texto">
+                    <p>
+                        Autor: {{libro.autor}}<br>
+                        {{libro.tipoLibro}} <br>
+                        {{libro.id_libro | formatoLibro}}
+                    </p>
+                </section>
+                <section class="precio">
+                    <h6>{{libro.precio}} €</h6>
+                </section>
+            </div>
+            <div>
+                <button [ngClass]="{newBtn:par, button:impar}">COMPRAR</button>
+            </div>
+        </section>
+    </section>
+
+    <section class="formulario">
+        
+        <section class="contenedor">
+            <section>
+                <h6 class="formulario_titulo">Añadir Libro</h6>
+                <input class="input" type="text" #input1 placeholder="Titulo">
+                <input class="input" type="text" #input2 placeholder="Tapa blanda/dura">
+                <input class="input" type="text" #input3 placeholder="Autor">
+                <input class="input" type="text" #input4 placeholder="Precio">
+                <input class="input" type="text" #input5 placeholder="Photo">
+                <input class="input" type="text" #input6 placeholder="Código">
+            </section>
+            <button 
+                type="button" 
+                class="button"
+                on-click=anadir(input1,input2,input3,input4,input5,input6)>
+                AÑADIR
+            </button>
+        </section>
+
+        <section class="contenedor">
+            <section>
+                <h6 class="formulario_titulo">Modificar Libro</h6>
+                <input class="input" type="text" placeholder="Titulo">
+                <input class="input" type="text" placeholder="Tapa blanda/dura">
+                <input class="input" type="text" placeholder="Autor">
+                <input class="input" type="text" placeholder="Precio">
+                <input class="input" type="text" placeholder="Photo">
+                <input class="input" type="text" placeholder="Código">
+            </section>
+            <button 
+                type="button" 
+                class="button">
+                MODIFICAR
+            </button>
+        </section>
+
+    </section>
+
+</section>
+
