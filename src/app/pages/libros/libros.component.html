@@ -1,11 +1,25 @@
 <section class="clean biblioteca">
 
+    <section class="buscador">
+        <input class="input_buscador" type="number" #input placeholder="Introduce numero de Ref para buscar un libro">
+        <button class="button_buscador" 
+                on-click="get(input)">
+                <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </section>
+
     <section class="libros">
         <div *ngIf="libros.length === 0" class="condicion">
             No tenemos libros publicados en estos momentos. <br>
             Puede añadir uno mediante nuestro formulario.
         </div>
         <section class="card" *ngFor="let libro of libros; let par = even; let impar = odd;">
+            <div class="btnEliminar">
+                <button class="btn_eliminar" 
+                on-click="delete(libro.id_libro)">
+                X
+                </button>
+            </div>
             <figure class="imagen">
                 <img class="foto" src="{{libro.photo}}">
             </figure>
@@ -51,16 +65,17 @@
         <section class="contenedor">
             <section>
                 <h6 class="formulario_titulo">Modificar Libro</h6>
-                <input class="input" type="text" placeholder="Titulo">
-                <input class="input" type="text" placeholder="Tapa blanda/dura">
-                <input class="input" type="text" placeholder="Autor">
-                <input class="input" type="text" placeholder="Precio">
-                <input class="input" type="text" placeholder="Photo">
-                <input class="input" type="text" placeholder="Código">
+                <input class="input" type="text" #input7 placeholder="Titulo">
+                <input class="input" type="text" #input8 placeholder="Tapa blanda/dura">
+                <input class="input" type="text" #input9 placeholder="Autor">
+                <input class="input" type="text" #input10 placeholder="Precio">
+                <input class="input" type="text" #input11 placeholder="Photo">
+                <input class="input" type="text" #input12 placeholder="Código">
             </section>
             <button 
                 type="button" 
-                class="button">
+                class="button"
+                on-click="edit(input7,input8,input9,input10,input11,input12)">
                 MODIFICAR
             </button>
         </section>
@@ -68,4 +83,3 @@
     </section>
 
 </section>
-
