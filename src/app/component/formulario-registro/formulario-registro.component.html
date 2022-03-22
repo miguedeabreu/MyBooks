@@ -1,8 +1,15 @@
-<form action="formulario-contacto.php">	
-    <input type="text" placeholder="Nombre" maxlength="30"/>
-    <input type="text" placeholder="Apellido" maxlength="30"/>
-    <input type="email" placeholder="e-mail"/>
-    <input type="text" placeholder="Contraseña"/>
-    <input type="text" placeholder="Repetir contraseña"/>
-    <button type="submit" class="btn">REGISTRAR</button>
-</form>
+<div class="clean">
+    <form >
+        <input type="text" #input1 placeholder="Nombre" maxlength="30"/>
+        <input type="text" #input2 placeholder="Apellido" maxlength="30"/>
+        <input type="email" #input3 placeholder="e-mail"/>
+        <input type="text" #input4 placeholder="URL de foto"/>
+        <input type="text" #input5 placeholder="Contraseña"/>
+        <input type="text" #input6 placeholder="Repetir contraseña"/>
+        <button type="reset" 
+                class="btn"
+                on-click="registrarUsuario(input1,input2,input3,input4,input5,input6)">
+                REGISTRAR
+        </button>
+    </form>
+</div>

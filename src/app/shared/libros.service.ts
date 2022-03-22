@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Libro } from '../models/libro';
 
 @Injectable({
@@ -13,7 +15,7 @@ export class LibrosService
     new Libro ("Animales Fantásticos y Dónde Encontrarlos", "Tapa dura", "Newt Scamander",
     9.99, "https://images-na.ssl-images-amazon.com/images/I/41V5ZbZpVHL._SX322_BO1,204,203,200_.jpg", 2, 1),
 
-    new Libro ("Harry Potter y el Prisionero de Azcaban", "Tapa blanda", "J.K. Rowling",
+    new Libro ("Harry Potter y el Prisionero de Azkaban", "Tapa blanda", "J.K. Rowling",
     15.99, "https://images-na.ssl-images-amazon.com/images/I/41G6AGP-QHL._SX303_BO1,204,203,200_.jpg", 3, 1),
 
     new Libro ("Harry Potter y la Orden del Fénix", "Tapa blanda", "J.K. Rowling",
@@ -33,57 +35,89 @@ export class LibrosService
     
   ]
 
-  constructor() 
+  private url = "http://localhost:3000";
+
+  constructor(private http: HttpClient) 
   { 
     
   }
 
-  //METODOS PUBLICOS
-
-  getAll(): Libro[]
+  getAll(id_usuario: Number):Observable<Object>
   {
-    return this.libros;
+    return this.http.get(this.url + `/libros?id_usuario= + ${id_usuario}`)
   }
 
-  add(libro:Libro): void
+  getOne(id_usuario: Number, id_libro: Number):Observable<Object>
   {
-    this.libros.push(libro)
+    return this.http.get(this.url + `/libros?id_usuario=${id_usuario}&id_libro=${id_libro}`)
   }
 
-  getOne(id_libro: number): Libro
+  add(libro:Libro):Observable<Object>
   {
-    for (let i = 0 ; i < this.libros.length; i++)
-    {
-      if (this.libros[i].id_libro === id_libro)
-      {
-        return this.libros[i];
-      }  
+    return this.http.post(this.url + "/libros", libro)
+  }
+
+  delete(id_libro:number):Observable<Object>
+  {
+    let options= {
+      headers: new HttpHeaders ({'Content-Type': 'application/json'}),
+      body: {id_libro: id_libro}
     }
+    return this.http.delete(this.url + "/libros", options)
   }
 
-  edit(libro:Libro): boolean
+  edit(libro:Libro):Observable<Object>
   {
-    for (let i = 0 ; i < this.libros.length; i++)
-    {
-      if (this.libros[i].id_libro === libro.id_libro)
-      {
-        return true;
-      }  
-    }
-    return false
+    return this.http.put(this.url + "/libros", libro)
   }
 
-  delete(id_libro: number): boolean
-  {
-    for (let i = 0 ; i < this.libros.length; i++)
-    {
-      if (this.libros[i].id_libro === id_libro)
-      {
-        this.libros.splice(i,1)
-        return true
-      }  
-    }
-    return false
-  }
+  // METODOS PUBLICOS
+
+  // getAll(): Libro[]
+  // {
+  //   return this.libros;
+  // }
+
+  // getOne(id_libro: number): Libro
+  // {
+  //   for (let i = 0 ; i < this.libros.length; i++)
+  //   {
+  //     if (this.libros[i].id_libro === id_libro)
+  //     {
+  //       return this.libros[i];
+  //     }  
+  //   }
+  // }
+
+  // add(libro:Libro): void
+  // {
+  //   this.libros.push(libro)
+  // }
+
+  // edit(libro:Libro): boolean
+  // {
+  //   for (let i = 0 ; i < this.libros.length; i++)
+  //   {
+  //     if (this.libros[i].id_libro === libro.id_libro)
+  //     {
+  //       this.libros[i] = libro;
+  //       return true;
+  //     }  
+  //   }
+  //   return false
+  // }
+
+  // delete(id_libro: number): boolean
+  // {
+  //   for (let i = 0 ; i < this.libros.length; i++)
+  //   {
+  //     if (this.libros[i].id_libro === id_libro)
+  //     {
+  //       this.libros.splice(i,1)
+  //       return true
+  //     }  
+  //   }
+  //   return false
+  // }
   
 }

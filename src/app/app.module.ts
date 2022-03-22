@@ -11,6 +11,9 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LibrosComponent } from './pages/libros/libros.component';
 import { FormatoLibroPipe } from './pipes/formato-libro.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
+import { FormularioLoginComponent } from './component/formulario-login/formulario-login.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,13 @@ import { FormatoLibroPipe } from './pipes/formato-libro.pipe';
     PerfilComponent,
     LibrosComponent,
     FormatoLibroPipe,
+    LoginComponent,
+    FormularioLoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

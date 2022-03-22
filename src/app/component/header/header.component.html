@@ -8,9 +8,10 @@
         </a>
     </nav>
     <nav class="menu">
-        <a class="enlace" routerLink="/home">Home</a>
-        <a class="enlace" routerLink="/registro">Registro</a>
-        <a class="enlace" routerLink="/perfil">Perfil</a>
-        <a class="enlace" routerLink="/libros">Libros</a>
+        <a *ngIf="!usuario.logueado;" class="enlace" routerLink="/home" >Home</a>
+        <a *ngIf="!usuario.logueado;" class="enlace" routerLink="/registro">Registro</a>
+        <a *ngIf="!usuario.logueado;" class="enlace" routerLink="/login">Login</a>
+        <a *ngIf="usuario.logueado;" class="enlace" routerLink="/perfil">Perfil</a>
+        <a *ngIf="usuario.logueado;" class="enlace" routerLink="/libros">Libros</a>
     </nav>
 </header>
